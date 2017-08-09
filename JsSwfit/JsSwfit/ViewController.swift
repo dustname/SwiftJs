@@ -25,6 +25,8 @@ var backUrl: String?
     func setBackUrl(_ flag: String)
     /// 获取系统定位
     func requestLocation()
+    /// toast一句提示
+    func toast(_ message: String)
 }
 
 @objc class JSSwiftModel: NSObject, JavaScriptSwiftDelegate {
@@ -70,6 +72,14 @@ var backUrl: String?
         } else if flag.contains("close") {
             backUrl = ""
         }
+    }
+    
+    /// toast一句提示
+    func toast(_ message: String) {
+        let alertVc = UIAlertController(title: "", message: message, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+        alertVc.addAction(cancelAction)
+        self.controller?.present(alertVc, animated: true, completion: nil)
     }
 
     /// 获取系统定位
