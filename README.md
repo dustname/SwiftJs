@@ -1,4 +1,4 @@
-#Swift与js互调
+## 注意点
 ### UIWebView重定向, JSContext注入失败, 解决方法为重新生成UIWebView, 再次注入.
 
 # OTOSaaS SDK JS Bridge
